@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.mapper.RoleUserPMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.pojo.RoleUserP">
+    <!--@mbg.generated-->
+    <!--@Table role_user_p-->
+    <id column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    <!--@mbg.generated-->
+    delete from role_user_p
+    where ROLE_ID = #{roleId,jdbcType=VARCHAR}
+      and USER_ID = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lyzzz.pojo.RoleUserP">
+    <!--@mbg.generated-->
+    insert into role_user_p (ROLE_ID, USER_ID)
+    values (#{roleId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyzzz.pojo.RoleUserP">
+    <!--@mbg.generated-->
+    insert into role_user_p
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        ROLE_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        #{roleId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="listRoleUser" resultMap="BaseResultMap">
+    select * from role_user_p where USER_ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByUserId">
+    delete from role_user_p where USER_ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <select id="selectById" resultType="com.lyzzz.pojo.RoleUserP">
+    select * from role_user_p  where ROLE_ID = #{roleId,jdbcType=VARCHAR}
+  </select>
+</mapper>

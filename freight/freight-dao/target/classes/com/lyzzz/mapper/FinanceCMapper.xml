@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.mapper.FinanceCMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.pojo.FinanceC">
+    <!--@mbg.generated-->
+    <!--@Table finance_c-->
+    <id column="FINANCE_ID" jdbcType="VARCHAR" property="financeId" />
+    <result column="INPUT_DATE" jdbcType="TIMESTAMP" property="inputDate" />
+    <result column="INPUT_BY" jdbcType="VARCHAR" property="inputBy" />
+    <result column="STATE" jdbcType="INTEGER" property="state" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DEPT" jdbcType="VARCHAR" property="createDept" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    FINANCE_ID, INPUT_DATE, INPUT_BY, `STATE`, CREATE_BY, CREATE_DEPT, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from finance_c
+    where FINANCE_ID = #{financeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from finance_c
+    where FINANCE_ID = #{financeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lyzzz.pojo.FinanceC">
+    <!--@mbg.generated-->
+    insert into finance_c (FINANCE_ID, INPUT_DATE, INPUT_BY, 
+      `STATE`, CREATE_BY, CREATE_DEPT, 
+      CREATE_TIME)
+    values (#{financeId,jdbcType=VARCHAR}, #{inputDate,jdbcType=TIMESTAMP}, #{inputBy,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, #{createDept,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyzzz.pojo.FinanceC">
+    <!--@mbg.generated-->
+    insert into finance_c
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="financeId != null">
+        FINANCE_ID,
+      </if>
+      <if test="inputDate != null">
+        INPUT_DATE,
+      </if>
+      <if test="inputBy != null">
+        INPUT_BY,
+      </if>
+      <if test="state != null">
+        `STATE`,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="financeId != null">
+        #{financeId,jdbcType=VARCHAR},
+      </if>
+      <if test="inputDate != null">
+        #{inputDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputBy != null">
+        #{inputBy,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyzzz.pojo.FinanceC">
+    <!--@mbg.generated-->
+    update finance_c
+    <set>
+      <if test="inputDate != null">
+        INPUT_DATE = #{inputDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputBy != null">
+        INPUT_BY = #{inputBy,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        `STATE` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where FINANCE_ID = #{financeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyzzz.pojo.FinanceC">
+    <!--@mbg.generated-->
+    update finance_c
+    set INPUT_DATE = #{inputDate,jdbcType=TIMESTAMP},
+      INPUT_BY = #{inputBy,jdbcType=VARCHAR},
+      `STATE` = #{state,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where FINANCE_ID = #{financeId,jdbcType=VARCHAR}
+  </update>
+</mapper>

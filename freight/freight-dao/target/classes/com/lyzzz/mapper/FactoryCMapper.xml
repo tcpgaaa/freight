@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.mapper.FactoryCMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.pojo.FactoryC">
+    <!--@mbg.generated-->
+    <!--@Table factory_c-->
+    <id column="FACTORY_ID" jdbcType="VARCHAR" property="factoryId" />
+    <result column="CTYPE" jdbcType="VARCHAR" property="ctype" />
+    <result column="FULL_NAME" jdbcType="VARCHAR" property="fullName" />
+    <result column="FACTORY_NAME" jdbcType="VARCHAR" property="factoryName" />
+    <result column="CONTACTS" jdbcType="VARCHAR" property="contacts" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
+    <result column="FAX" jdbcType="VARCHAR" property="fax" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="INSPECTOR" jdbcType="VARCHAR" property="inspector" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="ORDER_NO" jdbcType="INTEGER" property="orderNo" />
+    <result column="STATE" jdbcType="CHAR" property="state" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DEPT" jdbcType="VARCHAR" property="createDept" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    FACTORY_ID, CTYPE, FULL_NAME, FACTORY_NAME, CONTACTS, PHONE, MOBILE, FAX, ADDRESS, 
+    INSPECTOR, REMARK, ORDER_NO, `STATE`, CREATE_BY, CREATE_DEPT, CREATE_TIME, UPDATE_BY, 
+    UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from factory_c
+    where FACTORY_ID = #{factoryId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from factory_c
+    where FACTORY_ID = #{factoryId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lyzzz.pojo.FactoryC">
+    <!--@mbg.generated-->
+    insert into factory_c (FACTORY_ID, CTYPE, FULL_NAME, 
+      FACTORY_NAME, CONTACTS, PHONE, 
+      MOBILE, FAX, ADDRESS, 
+      INSPECTOR, REMARK, ORDER_NO, 
+      `STATE`, CREATE_BY, CREATE_DEPT, 
+      CREATE_TIME, UPDATE_BY, UPDATE_TIME
+      )
+    values (#{factoryId,jdbcType=VARCHAR}, #{ctype,jdbcType=VARCHAR}, #{fullName,jdbcType=VARCHAR}, 
+      #{factoryName,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{inspector,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{orderNo,jdbcType=INTEGER}, 
+      #{state,jdbcType=CHAR}, #{createBy,jdbcType=VARCHAR}, #{createDept,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyzzz.pojo.FactoryC">
+    <!--@mbg.generated-->
+    insert into factory_c
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="factoryId != null">
+        FACTORY_ID,
+      </if>
+      <if test="ctype != null">
+        CTYPE,
+      </if>
+      <if test="fullName != null">
+        FULL_NAME,
+      </if>
+      <if test="factoryName != null">
+        FACTORY_NAME,
+      </if>
+      <if test="contacts != null">
+        CONTACTS,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="mobile != null">
+        MOBILE,
+      </if>
+      <if test="fax != null">
+        FAX,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="inspector != null">
+        INSPECTOR,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO,
+      </if>
+      <if test="state != null">
+        `STATE`,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="factoryId != null">
+        #{factoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="ctype != null">
+        #{ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="factoryName != null">
+        #{factoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null">
+        #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="inspector != null">
+        #{inspector,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyzzz.pojo.FactoryC">
+    <!--@mbg.generated-->
+    update factory_c
+    <set>
+      <if test="ctype != null">
+        CTYPE = #{ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        FULL_NAME = #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="factoryName != null">
+        FACTORY_NAME = #{factoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null">
+        CONTACTS = #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        MOBILE = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        FAX = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="inspector != null">
+        INSPECTOR = #{inspector,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO = #{orderNo,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        `STATE` = #{state,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where FACTORY_ID = #{factoryId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyzzz.pojo.FactoryC">
+    <!--@mbg.generated-->
+    update factory_c
+    set CTYPE = #{ctype,jdbcType=VARCHAR},
+      FULL_NAME = #{fullName,jdbcType=VARCHAR},
+      FACTORY_NAME = #{factoryName,jdbcType=VARCHAR},
+      CONTACTS = #{contacts,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      MOBILE = #{mobile,jdbcType=VARCHAR},
+      FAX = #{fax,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      INSPECTOR = #{inspector,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      ORDER_NO = #{orderNo,jdbcType=INTEGER},
+      `STATE` = #{state,jdbcType=CHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where FACTORY_ID = #{factoryId,jdbcType=VARCHAR}
+  </update>
+    <select id="selectAll" resultMap="BaseResultMap">
+      select * from factory_c
+    </select>
+</mapper>

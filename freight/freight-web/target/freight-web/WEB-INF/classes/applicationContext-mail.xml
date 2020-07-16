@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置message-->
+    <bean id="simpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="${mail.from}"></property>
+    </bean>
+
+    <!--配置MailSender-->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <property name="host" value="${mail.host}"></property>
+        <property name="username" value="${mail.username}" />
+        <property name="password" value="${mail.password}" />
+        <property name="javaMailProperties">
+            <props>
+                <!-- 设置认证开关 -->
+                <prop key="mail.smtp.auth">true</prop>
+                <!-- 启动调试开关 -->
+                <prop key="mail.debug">true</prop>
+                <!-- 设置发送延时 -->
+                <prop key="mail.smtp.timeout">0</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

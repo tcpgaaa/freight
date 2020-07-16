@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.mapper.ModulePMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.pojo.ModuleP">
+    <!--@mbg.generated-->
+    <!--@Table module_p-->
+    <id column="MODULE_ID" jdbcType="VARCHAR" property="moduleId" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+    <result column="PARENT_NAME" jdbcType="VARCHAR" property="parentName" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="LAYER_NUM" jdbcType="INTEGER" property="layerNum" />
+    <result column="IS_LEAF" jdbcType="INTEGER" property="isLeaf" />
+    <result column="ICO" jdbcType="VARCHAR" property="ico" />
+    <result column="CPERMISSION" jdbcType="VARCHAR" property="cpermission" />
+    <result column="CURL" jdbcType="VARCHAR" property="curl" />
+    <result column="CTYPE" jdbcType="INTEGER" property="ctype" />
+    <result column="STATE" jdbcType="INTEGER" property="state" />
+    <result column="BELONG" jdbcType="VARCHAR" property="belong" />
+    <result column="CWHICH" jdbcType="VARCHAR" property="cwhich" />
+    <result column="QUOTE_NUM" jdbcType="INTEGER" property="quoteNum" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="ORDER_NO" jdbcType="INTEGER" property="orderNo" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DEPT" jdbcType="VARCHAR" property="createDept" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    MODULE_ID, PARENT_ID, PARENT_NAME, `NAME`, LAYER_NUM, IS_LEAF, ICO, CPERMISSION, 
+    CURL, CTYPE, `STATE`, BELONG, CWHICH, QUOTE_NUM, REMARK, ORDER_NO, CREATE_BY, CREATE_DEPT, 
+    CREATE_TIME, UPDATE_BY, UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from module_p
+    where MODULE_ID = #{moduleId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from module_p
+    where MODULE_ID = #{moduleId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lyzzz.pojo.ModuleP">
+    <!--@mbg.generated-->
+    insert into module_p (MODULE_ID, PARENT_ID, PARENT_NAME, 
+      `NAME`, LAYER_NUM, IS_LEAF, 
+      ICO, CPERMISSION, CURL, 
+      CTYPE, `STATE`, BELONG, 
+      CWHICH, QUOTE_NUM, REMARK, 
+      ORDER_NO, CREATE_BY, CREATE_DEPT, 
+      CREATE_TIME, UPDATE_BY, UPDATE_TIME
+      )
+    values (#{moduleId,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{parentName,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{layerNum,jdbcType=INTEGER}, #{isLeaf,jdbcType=INTEGER}, 
+      #{ico,jdbcType=VARCHAR}, #{cpermission,jdbcType=VARCHAR}, #{curl,jdbcType=VARCHAR}, 
+      #{ctype,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{belong,jdbcType=VARCHAR}, 
+      #{cwhich,jdbcType=VARCHAR}, #{quoteNum,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{orderNo,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, #{createDept,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyzzz.pojo.ModuleP">
+    <!--@mbg.generated-->
+    insert into module_p
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="moduleId != null">
+        MODULE_ID,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+      <if test="parentName != null">
+        PARENT_NAME,
+      </if>
+      <if test="name != null">
+        `NAME`,
+      </if>
+      <if test="layerNum != null">
+        LAYER_NUM,
+      </if>
+      <if test="isLeaf != null">
+        IS_LEAF,
+      </if>
+      <if test="ico != null">
+        ICO,
+      </if>
+      <if test="cpermission != null">
+        CPERMISSION,
+      </if>
+      <if test="curl != null">
+        CURL,
+      </if>
+      <if test="ctype != null">
+        CTYPE,
+      </if>
+      <if test="state != null">
+        `STATE`,
+      </if>
+      <if test="belong != null">
+        BELONG,
+      </if>
+      <if test="cwhich != null">
+        CWHICH,
+      </if>
+      <if test="quoteNum != null">
+        QUOTE_NUM,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="moduleId != null">
+        #{moduleId,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="parentName != null">
+        #{parentName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="layerNum != null">
+        #{layerNum,jdbcType=INTEGER},
+      </if>
+      <if test="isLeaf != null">
+        #{isLeaf,jdbcType=INTEGER},
+      </if>
+      <if test="ico != null">
+        #{ico,jdbcType=VARCHAR},
+      </if>
+      <if test="cpermission != null">
+        #{cpermission,jdbcType=VARCHAR},
+      </if>
+      <if test="curl != null">
+        #{curl,jdbcType=VARCHAR},
+      </if>
+      <if test="ctype != null">
+        #{ctype,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="belong != null">
+        #{belong,jdbcType=VARCHAR},
+      </if>
+      <if test="cwhich != null">
+        #{cwhich,jdbcType=VARCHAR},
+      </if>
+      <if test="quoteNum != null">
+        #{quoteNum,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyzzz.pojo.ModuleP">
+    <!--@mbg.generated-->
+    update module_p
+    <set>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="parentName != null">
+        PARENT_NAME = #{parentName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `NAME` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="layerNum != null">
+        LAYER_NUM = #{layerNum,jdbcType=INTEGER},
+      </if>
+      <if test="isLeaf != null">
+        IS_LEAF = #{isLeaf,jdbcType=INTEGER},
+      </if>
+      <if test="ico != null">
+        ICO = #{ico,jdbcType=VARCHAR},
+      </if>
+      <if test="cpermission != null">
+        CPERMISSION = #{cpermission,jdbcType=VARCHAR},
+      </if>
+      <if test="curl != null">
+        CURL = #{curl,jdbcType=VARCHAR},
+      </if>
+      <if test="ctype != null">
+        CTYPE = #{ctype,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        `STATE` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="belong != null">
+        BELONG = #{belong,jdbcType=VARCHAR},
+      </if>
+      <if test="cwhich != null">
+        CWHICH = #{cwhich,jdbcType=VARCHAR},
+      </if>
+      <if test="quoteNum != null">
+        QUOTE_NUM = #{quoteNum,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO = #{orderNo,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where MODULE_ID = #{moduleId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyzzz.pojo.ModuleP">
+    <!--@mbg.generated-->
+    update module_p
+    set PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      PARENT_NAME = #{parentName,jdbcType=VARCHAR},
+      `NAME` = #{name,jdbcType=VARCHAR},
+      LAYER_NUM = #{layerNum,jdbcType=INTEGER},
+      IS_LEAF = #{isLeaf,jdbcType=INTEGER},
+      ICO = #{ico,jdbcType=VARCHAR},
+      CPERMISSION = #{cpermission,jdbcType=VARCHAR},
+      CURL = #{curl,jdbcType=VARCHAR},
+      CTYPE = #{ctype,jdbcType=INTEGER},
+      `STATE` = #{state,jdbcType=INTEGER},
+      BELONG = #{belong,jdbcType=VARCHAR},
+      CWHICH = #{cwhich,jdbcType=VARCHAR},
+      QUOTE_NUM = #{quoteNum,jdbcType=INTEGER},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      ORDER_NO = #{orderNo,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where MODULE_ID = #{moduleId,jdbcType=VARCHAR}
+  </update>
+  <select id="getPermissionsByUserId" resultMap="BaseResultMap">
+
+    select * from module_p where module_id in(
+    select module_id from role_module_p where role_id in (
+    select role_id from role_user_p where user_id=#{userid}
+    )
+    )
+
+
+  </select>
+    <select id="listModuleOfTreeBeanByRoleId" resultType="com.lyzzz.pojo.TreeNode">
+      select m.module_id id,m.parent_id pId,m.name,'true' checked from module_p m where m.module_id in(
+      select module_id from role_module_p rm where role_id=#{roleid}
+      )
+      union
+      select m.module_id id,m.parent_id pId,m.name,'false' checked from module_p m where m.module_id not in(
+      select module_id from role_module_p rm where role_id=#{roleid}
+      )
+    </select>
+  <select id="selectByPage" resultMap="BaseResultMap">
+        select * from module_p
+    order by ORDER_NO asc
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from module_p
+  </select>
+  <select id="listModuleOfTreeBean" resultType="com.lyzzz.pojo.TreeNode">
+      select m.module_id id,m.parent_id pId,m.name,'false' open,layer_num+1 layerNum from module_p m
+  </select>
+</mapper>

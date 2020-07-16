@@ -1,0 +1,55 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"></property>
+        <!--没有登录要跳转的url
+            如果没有在表单认证过滤器中指定登录的地址，则此地址就为认证地址-->
+        <property name="loginUrl" value="/index"/>
+        <!--认证成功之后 跳转到哪个url-->
+        <property name="successUrl" value="/main"/>
+        <!--没有权限  跳转到哪个url-->
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+
+        <property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"></property>
+    </bean>
+    <bean id="filterChainDefinitionMap" factory-bean="filterChainDefinitionMapFactory" factory-method="buildFilterChainDefinitionMap"></bean>
+
+    <bean id="filterChainDefinitionMapFactory" class="com.lyzzz.factory.FilterChainDefinitionMapFactory"></bean>
+
+    <bean id="logout" class="com.lyzzz.filter.SystemLogoutFilter">
+        <property name="redirectUrl" value="/" />
+    </bean>
+    <!--安全管理器-->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="customRealm"></property>
+        <!--注入会话管理器-->
+        <property name="sessionManager" ref="sessionManager"></property>
+    </bean>
+    <!--自定义的realm-->
+    <bean id="customRealm" class="com.lyzzz.realm.CustomRealm">
+        <!--注入密码匹配器-->
+        <property name="credentialsMatcher" ref="credentialsMatcher" />
+        <!--注入缓存管理器-->
+        <property name="cacheManager" ref="cacheManager" />
+    </bean>
+
+    <!-- 凭证匹配器 -->
+    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+        <property name="hashAlgorithmName" value="md5" />
+        <property name="hashIterations" value="1" />
+    </bean>
+
+    <!--缓存管理器-->
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:shiro-ehcache.xml" />
+    </bean>
+
+    <!-- 会话管理器 -->
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <!-- session的失效时长，单位毫秒 -->
+        <property name="globalSessionTimeout" value="1800000"/>
+    </bean>
+</beans>

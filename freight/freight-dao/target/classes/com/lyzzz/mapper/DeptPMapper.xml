@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.mapper.DeptPMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.pojo.DeptP">
+    <!--@mbg.generated-->
+    <!--@Table dept_p-->
+    <id column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+    <result column="DEPT_NAME" jdbcType="VARCHAR" property="deptName" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+    <result column="STATE" jdbcType="INTEGER" property="state" />
+    <result column="dept_no" jdbcType="VARCHAR" property="deptNo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    DEPT_ID, DEPT_NAME, PARENT_ID, `STATE`, dept_no
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from dept_p
+    where DEPT_ID = #{deptId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from dept_p
+    where DEPT_ID = #{deptId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lyzzz.pojo.DeptP">
+    <!--@mbg.generated-->
+    insert into dept_p (DEPT_ID, DEPT_NAME, PARENT_ID, 
+      `STATE`, dept_no)
+    values (#{deptId,jdbcType=VARCHAR}, #{deptName,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{deptNo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyzzz.pojo.DeptP">
+    <!--@mbg.generated-->
+    insert into dept_p
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deptId != null">
+        DEPT_ID,
+      </if>
+      <if test="deptName != null">
+        DEPT_NAME,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+      <if test="state != null">
+        `STATE`,
+      </if>
+      <if test="deptNo != null">
+        dept_no,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deptId != null">
+        #{deptId,jdbcType=VARCHAR},
+      </if>
+      <if test="deptName != null">
+        #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="deptNo != null">
+        #{deptNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyzzz.pojo.DeptP">
+    <!--@mbg.generated-->
+    update dept_p
+    <set>
+      <if test="deptName != null">
+        DEPT_NAME = #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        `STATE` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="deptNo != null">
+        dept_no = #{deptNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where DEPT_ID = #{deptId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyzzz.pojo.DeptP">
+    <!--@mbg.generated-->
+    update dept_p
+    set DEPT_NAME = #{deptName,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      `STATE` = #{state,jdbcType=INTEGER},
+      dept_no = #{deptNo,jdbcType=VARCHAR}
+    where DEPT_ID = #{deptId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="DeptVoResultMap" type="com.lyzzz.pojo.DeptPVo">
+    <!--@mbg.generated-->
+    <!--@Table dept_p-->
+    <id column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+    <result column="DEPT_NAME" jdbcType="VARCHAR" property="deptName" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+    <result column="STATE" jdbcType="INTEGER" property="state" />
+    <result column="dept_no" jdbcType="VARCHAR" property="deptNo" />
+    <result column="parent_name" jdbcType="VARCHAR" property="parentName" />
+  </resultMap>
+    <select id="listDeptAndParent" resultMap="DeptVoResultMap">
+      select d.*,p.dept_name parent_name
+      from dept_p d left join dept_p p
+      on  d.parent_id = p.dept_id
+      ORDER BY d.dept_no
+    </select>
+  <select id="selectDeptList" resultMap="BaseResultMap">
+    select * from dept_p
+  </select>
+
+  <select id="DeptAndParentById" resultMap="DeptVoResultMap">
+    SELECT
+    d.*, p.DEPT_NAME parent_name
+    FROM
+    dept_p d
+    LEFT JOIN dept_p p ON d.PARENT_ID = p.DEPT_ID
+    WHERE d.dept_id=#{deptId}
+
+  </select>
+  <select id="selectDeptHasChildDept" resultMap="BaseResultMap">
+    select * from dept_p where PARENT_ID = #{deptId}
+  </select>
+</mapper>

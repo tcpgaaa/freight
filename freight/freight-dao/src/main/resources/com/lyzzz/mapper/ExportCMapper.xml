@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.mapper.ExportCMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.pojo.ExportC">
+    <!--@mbg.generated-->
+    <!--@Table export_c-->
+    <id column="EXPORT_ID" jdbcType="VARCHAR" property="exportId" />
+    <result column="INPUT_DATE" jdbcType="TIMESTAMP" property="inputDate" />
+    <result column="CONTRACT_IDS" jdbcType="VARCHAR" property="contractIds" />
+    <result column="CUSTOMER_CONTRACT" jdbcType="VARCHAR" property="customerContract" />
+    <result column="LCNO" jdbcType="VARCHAR" property="lcno" />
+    <result column="CONSIGNEE" jdbcType="VARCHAR" property="consignee" />
+    <result column="MARKS" jdbcType="VARCHAR" property="marks" />
+    <result column="SHIPMENT_PORT" jdbcType="VARCHAR" property="shipmentPort" />
+    <result column="DESTINATION_PORT" jdbcType="VARCHAR" property="destinationPort" />
+    <result column="TRANSPORT_MODE" jdbcType="VARCHAR" property="transportMode" />
+    <result column="PRICE_CONDITION" jdbcType="VARCHAR" property="priceCondition" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="BOX_NUMS" jdbcType="INTEGER" property="boxNums" />
+    <result column="GROSS_WEIGHTS" jdbcType="DECIMAL" property="grossWeights" />
+    <result column="MEASUREMENTS" jdbcType="DECIMAL" property="measurements" />
+    <result column="STATE" jdbcType="INTEGER" property="state" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DEPT" jdbcType="VARCHAR" property="createDept" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    EXPORT_ID, INPUT_DATE, CONTRACT_IDS, CUSTOMER_CONTRACT, LCNO, CONSIGNEE, MARKS, SHIPMENT_PORT, 
+    DESTINATION_PORT, TRANSPORT_MODE, PRICE_CONDITION, REMARK, BOX_NUMS, GROSS_WEIGHTS, 
+    MEASUREMENTS, `STATE`, CREATE_BY, CREATE_DEPT, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from export_c
+    where EXPORT_ID = #{exportId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from export_c
+    where EXPORT_ID = #{exportId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lyzzz.pojo.ExportC">
+    <!--@mbg.generated-->
+    insert into export_c (EXPORT_ID, INPUT_DATE, CONTRACT_IDS, 
+      CUSTOMER_CONTRACT, LCNO, CONSIGNEE, 
+      MARKS, SHIPMENT_PORT, DESTINATION_PORT, 
+      TRANSPORT_MODE, PRICE_CONDITION, REMARK, 
+      BOX_NUMS, GROSS_WEIGHTS, MEASUREMENTS, 
+      `STATE`, CREATE_BY, CREATE_DEPT, 
+      CREATE_TIME)
+    values (#{exportId,jdbcType=VARCHAR}, #{inputDate,jdbcType=TIMESTAMP}, #{contractIds,jdbcType=VARCHAR}, 
+      #{customerContract,jdbcType=VARCHAR}, #{lcno,jdbcType=VARCHAR}, #{consignee,jdbcType=VARCHAR}, 
+      #{marks,jdbcType=VARCHAR}, #{shipmentPort,jdbcType=VARCHAR}, #{destinationPort,jdbcType=VARCHAR}, 
+      #{transportMode,jdbcType=VARCHAR}, #{priceCondition,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{boxNums,jdbcType=INTEGER}, #{grossWeights,jdbcType=DECIMAL}, #{measurements,jdbcType=DECIMAL}, 
+      #{state,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, #{createDept,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyzzz.pojo.ExportC">
+    <!--@mbg.generated-->
+    insert into export_c
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="exportId != null">
+        EXPORT_ID,
+      </if>
+      <if test="inputDate != null">
+        INPUT_DATE,
+      </if>
+      <if test="contractIds != null">
+        CONTRACT_IDS,
+      </if>
+      <if test="customerContract != null">
+        CUSTOMER_CONTRACT,
+      </if>
+      <if test="lcno != null">
+        LCNO,
+      </if>
+      <if test="consignee != null">
+        CONSIGNEE,
+      </if>
+      <if test="marks != null">
+        MARKS,
+      </if>
+      <if test="shipmentPort != null">
+        SHIPMENT_PORT,
+      </if>
+      <if test="destinationPort != null">
+        DESTINATION_PORT,
+      </if>
+      <if test="transportMode != null">
+        TRANSPORT_MODE,
+      </if>
+      <if test="priceCondition != null">
+        PRICE_CONDITION,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="boxNums != null">
+        BOX_NUMS,
+      </if>
+      <if test="grossWeights != null">
+        GROSS_WEIGHTS,
+      </if>
+      <if test="measurements != null">
+        MEASUREMENTS,
+      </if>
+      <if test="state != null">
+        `STATE`,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="exportId != null">
+        #{exportId,jdbcType=VARCHAR},
+      </if>
+      <if test="inputDate != null">
+        #{inputDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="contractIds != null">
+        #{contractIds,jdbcType=VARCHAR},
+      </if>
+      <if test="customerContract != null">
+        #{customerContract,jdbcType=VARCHAR},
+      </if>
+      <if test="lcno != null">
+        #{lcno,jdbcType=VARCHAR},
+      </if>
+      <if test="consignee != null">
+        #{consignee,jdbcType=VARCHAR},
+      </if>
+      <if test="marks != null">
+        #{marks,jdbcType=VARCHAR},
+      </if>
+      <if test="shipmentPort != null">
+        #{shipmentPort,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationPort != null">
+        #{destinationPort,jdbcType=VARCHAR},
+      </if>
+      <if test="transportMode != null">
+        #{transportMode,jdbcType=VARCHAR},
+      </if>
+      <if test="priceCondition != null">
+        #{priceCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="boxNums != null">
+        #{boxNums,jdbcType=INTEGER},
+      </if>
+      <if test="grossWeights != null">
+        #{grossWeights,jdbcType=DECIMAL},
+      </if>
+      <if test="measurements != null">
+        #{measurements,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyzzz.pojo.ExportC">
+    <!--@mbg.generated-->
+    update export_c
+    <set>
+      <if test="inputDate != null">
+        INPUT_DATE = #{inputDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="contractIds != null">
+        CONTRACT_IDS = #{contractIds,jdbcType=VARCHAR},
+      </if>
+      <if test="customerContract != null">
+        CUSTOMER_CONTRACT = #{customerContract,jdbcType=VARCHAR},
+      </if>
+      <if test="lcno != null">
+        LCNO = #{lcno,jdbcType=VARCHAR},
+      </if>
+      <if test="consignee != null">
+        CONSIGNEE = #{consignee,jdbcType=VARCHAR},
+      </if>
+      <if test="marks != null">
+        MARKS = #{marks,jdbcType=VARCHAR},
+      </if>
+      <if test="shipmentPort != null">
+        SHIPMENT_PORT = #{shipmentPort,jdbcType=VARCHAR},
+      </if>
+      <if test="destinationPort != null">
+        DESTINATION_PORT = #{destinationPort,jdbcType=VARCHAR},
+      </if>
+      <if test="transportMode != null">
+        TRANSPORT_MODE = #{transportMode,jdbcType=VARCHAR},
+      </if>
+      <if test="priceCondition != null">
+        PRICE_CONDITION = #{priceCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="boxNums != null">
+        BOX_NUMS = #{boxNums,jdbcType=INTEGER},
+      </if>
+      <if test="grossWeights != null">
+        GROSS_WEIGHTS = #{grossWeights,jdbcType=DECIMAL},
+      </if>
+      <if test="measurements != null">
+        MEASUREMENTS = #{measurements,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null">
+        `STATE` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where EXPORT_ID = #{exportId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyzzz.pojo.ExportC">
+    <!--@mbg.generated-->
+    update export_c
+    set INPUT_DATE = #{inputDate,jdbcType=TIMESTAMP},
+      CONTRACT_IDS = #{contractIds,jdbcType=VARCHAR},
+      CUSTOMER_CONTRACT = #{customerContract,jdbcType=VARCHAR},
+      LCNO = #{lcno,jdbcType=VARCHAR},
+      CONSIGNEE = #{consignee,jdbcType=VARCHAR},
+      MARKS = #{marks,jdbcType=VARCHAR},
+      SHIPMENT_PORT = #{shipmentPort,jdbcType=VARCHAR},
+      DESTINATION_PORT = #{destinationPort,jdbcType=VARCHAR},
+      TRANSPORT_MODE = #{transportMode,jdbcType=VARCHAR},
+      PRICE_CONDITION = #{priceCondition,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      BOX_NUMS = #{boxNums,jdbcType=INTEGER},
+      GROSS_WEIGHTS = #{grossWeights,jdbcType=DECIMAL},
+      MEASUREMENTS = #{measurements,jdbcType=DECIMAL},
+      `STATE` = #{state,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where EXPORT_ID = #{exportId,jdbcType=VARCHAR}
+  </update>
+
+  <resultMap id="listExportOfPageResultMap" type="com.lyzzz.pojo.ExportCVo" >
+    <id column="EXPORT_ID" property="exportId" jdbcType="VARCHAR" />
+    <result column="INPUT_DATE" property="inputDate" jdbcType="TIMESTAMP" />
+    <result column="CONTRACT_IDS" property="contractIds" jdbcType="VARCHAR" />
+    <result column="CUSTOMER_CONTRACT" property="customerContract" jdbcType="VARCHAR" />
+    <result column="LCNO" property="lcno" jdbcType="VARCHAR" />
+    <result column="CONSIGNEE" property="consignee" jdbcType="VARCHAR" />
+    <result column="MARKS" property="marks" jdbcType="VARCHAR" />
+    <result column="SHIPMENT_PORT" property="shipmentPort" jdbcType="VARCHAR" />
+    <result column="DESTINATION_PORT" property="destinationPort" jdbcType="VARCHAR" />
+    <result column="TRANSPORT_MODE" property="transportMode" jdbcType="VARCHAR" />
+    <result column="PRICE_CONDITION" property="priceCondition" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="BOX_NUMS" property="boxNums" jdbcType="INTEGER" />
+    <result column="GROSS_WEIGHTS" property="grossWeights" jdbcType="DECIMAL" />
+    <result column="MEASUREMENTS" property="measurements" jdbcType="DECIMAL" />
+    <result column="STATE" property="state" jdbcType="INTEGER" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DEPT" property="createDept" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="exportProductNum" property="exportProductNum" jdbcType="INTEGER" />
+    <result column="extEproductNum" property="extEproductNum" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="listExportOfPage" parameterType="Integer" resultMap="listExportOfPageResultMap">
+    SELECT
+    ec.*,
+    (select count(1) from export_product_c epc where epc.EXPORT_ID=ec.EXPORT_ID) exportProductNum,
+    (
+    select count(1) from ext_eproduct_c eec where eec.EXPORT_PRODUCT_ID in(
+    select EXPORT_PRODUCT_ID from export_product_c where EXPORT_ID=ec.EXPORT_ID
+    )
+    )extEproductNum
+    FROM
+    export_c ec
+    <where>
+      <if test="_parameter!=null">
+        ec.state = #{state}
+      </if>
+    </where>
+  </select>
+</mapper>

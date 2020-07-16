@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.mapper.ContractCMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.pojo.ContractC">
+    <!--@mbg.generated-->
+    <!--@Table contract_c-->
+    <id column="CONTRACT_ID" jdbcType="VARCHAR" property="contractId" />
+    <result column="OFFEROR" jdbcType="VARCHAR" property="offeror" />
+    <result column="CONTRACT_NO" jdbcType="VARCHAR" property="contractNo" />
+    <result column="SIGNING_DATE" jdbcType="TIMESTAMP" property="signingDate" />
+    <result column="INPUT_BY" jdbcType="VARCHAR" property="inputBy" />
+    <result column="CHECK_BY" jdbcType="VARCHAR" property="checkBy" />
+    <result column="INSPECTOR" jdbcType="VARCHAR" property="inspector" />
+    <result column="TOTAL_AMOUNT" jdbcType="DECIMAL" property="totalAmount" />
+    <result column="CREQUEST" jdbcType="VARCHAR" property="crequest" />
+    <result column="CUSTOM_NAME" jdbcType="VARCHAR" property="customName" />
+    <result column="SHIP_TIME" jdbcType="TIMESTAMP" property="shipTime" />
+    <result column="IMPORT_NUM" jdbcType="INTEGER" property="importNum" />
+    <result column="DELIVERY_PERIOD" jdbcType="TIMESTAMP" property="deliveryPeriod" />
+    <result column="OLD_STATE" jdbcType="INTEGER" property="oldState" />
+    <result column="OUT_STATE" jdbcType="INTEGER" property="outState" />
+    <result column="TRADE_TERMS" jdbcType="VARCHAR" property="tradeTerms" />
+    <result column="PRINT_STYLE" jdbcType="CHAR" property="printStyle" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="STATE" jdbcType="INTEGER" property="state" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DEPT" jdbcType="VARCHAR" property="createDept" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    CONTRACT_ID, OFFEROR, CONTRACT_NO, SIGNING_DATE, INPUT_BY, CHECK_BY, INSPECTOR, TOTAL_AMOUNT, 
+    CREQUEST, CUSTOM_NAME, SHIP_TIME, IMPORT_NUM, DELIVERY_PERIOD, OLD_STATE, OUT_STATE, 
+    TRADE_TERMS, PRINT_STYLE, REMARK, `STATE`, CREATE_BY, CREATE_DEPT, CREATE_TIME, UPDATE_BY, 
+    UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from contract_c
+    where CONTRACT_ID = #{contractId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from contract_c
+    where CONTRACT_ID = #{contractId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lyzzz.pojo.ContractC">
+    <!--@mbg.generated-->
+    insert into contract_c (CONTRACT_ID, OFFEROR, CONTRACT_NO, 
+      SIGNING_DATE, INPUT_BY, CHECK_BY, 
+      INSPECTOR, TOTAL_AMOUNT, CREQUEST, 
+      CUSTOM_NAME, SHIP_TIME, IMPORT_NUM, 
+      DELIVERY_PERIOD, OLD_STATE, OUT_STATE, 
+      TRADE_TERMS, PRINT_STYLE, REMARK, 
+      `STATE`, CREATE_BY, CREATE_DEPT, 
+      CREATE_TIME, UPDATE_BY, UPDATE_TIME
+      )
+    values (#{contractId,jdbcType=VARCHAR}, #{offeror,jdbcType=VARCHAR}, #{contractNo,jdbcType=VARCHAR}, 
+      #{signingDate,jdbcType=TIMESTAMP}, #{inputBy,jdbcType=VARCHAR}, #{checkBy,jdbcType=VARCHAR}, 
+      #{inspector,jdbcType=VARCHAR}, #{totalAmount,jdbcType=DECIMAL}, #{crequest,jdbcType=VARCHAR}, 
+      #{customName,jdbcType=VARCHAR}, #{shipTime,jdbcType=TIMESTAMP}, #{importNum,jdbcType=INTEGER}, 
+      #{deliveryPeriod,jdbcType=TIMESTAMP}, #{oldState,jdbcType=INTEGER}, #{outState,jdbcType=INTEGER}, 
+      #{tradeTerms,jdbcType=VARCHAR}, #{printStyle,jdbcType=CHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, #{createDept,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyzzz.pojo.ContractC">
+    <!--@mbg.generated-->
+    insert into contract_c
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="offeror != null">
+        OFFEROR,
+      </if>
+      <if test="contractNo != null">
+        CONTRACT_NO,
+      </if>
+      <if test="signingDate != null">
+        SIGNING_DATE,
+      </if>
+      <if test="inputBy != null">
+        INPUT_BY,
+      </if>
+      <if test="checkBy != null">
+        CHECK_BY,
+      </if>
+      <if test="inspector != null">
+        INSPECTOR,
+      </if>
+      <if test="totalAmount != null">
+        TOTAL_AMOUNT,
+      </if>
+      <if test="crequest != null">
+        CREQUEST,
+      </if>
+      <if test="customName != null">
+        CUSTOM_NAME,
+      </if>
+      <if test="shipTime != null">
+        SHIP_TIME,
+      </if>
+      <if test="importNum != null">
+        IMPORT_NUM,
+      </if>
+      <if test="deliveryPeriod != null">
+        DELIVERY_PERIOD,
+      </if>
+      <if test="oldState != null">
+        OLD_STATE,
+      </if>
+      <if test="outState != null">
+        OUT_STATE,
+      </if>
+      <if test="tradeTerms != null">
+        TRADE_TERMS,
+      </if>
+      <if test="printStyle != null">
+        PRINT_STYLE,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="state != null">
+        `STATE`,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="offeror != null">
+        #{offeror,jdbcType=VARCHAR},
+      </if>
+      <if test="contractNo != null">
+        #{contractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="signingDate != null">
+        #{signingDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputBy != null">
+        #{inputBy,jdbcType=VARCHAR},
+      </if>
+      <if test="checkBy != null">
+        #{checkBy,jdbcType=VARCHAR},
+      </if>
+      <if test="inspector != null">
+        #{inspector,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAmount != null">
+        #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="crequest != null">
+        #{crequest,jdbcType=VARCHAR},
+      </if>
+      <if test="customName != null">
+        #{customName,jdbcType=VARCHAR},
+      </if>
+      <if test="shipTime != null">
+        #{shipTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="importNum != null">
+        #{importNum,jdbcType=INTEGER},
+      </if>
+      <if test="deliveryPeriod != null">
+        #{deliveryPeriod,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oldState != null">
+        #{oldState,jdbcType=INTEGER},
+      </if>
+      <if test="outState != null">
+        #{outState,jdbcType=INTEGER},
+      </if>
+      <if test="tradeTerms != null">
+        #{tradeTerms,jdbcType=VARCHAR},
+      </if>
+      <if test="printStyle != null">
+        #{printStyle,jdbcType=CHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyzzz.pojo.ContractC">
+    <!--@mbg.generated-->
+    update contract_c
+    <set>
+      <if test="offeror != null">
+        OFFEROR = #{offeror,jdbcType=VARCHAR},
+      </if>
+      <if test="contractNo != null">
+        CONTRACT_NO = #{contractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="signingDate != null">
+        SIGNING_DATE = #{signingDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputBy != null">
+        INPUT_BY = #{inputBy,jdbcType=VARCHAR},
+      </if>
+      <if test="checkBy != null">
+        CHECK_BY = #{checkBy,jdbcType=VARCHAR},
+      </if>
+      <if test="inspector != null">
+        INSPECTOR = #{inspector,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAmount != null">
+        TOTAL_AMOUNT = #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="crequest != null">
+        CREQUEST = #{crequest,jdbcType=VARCHAR},
+      </if>
+      <if test="customName != null">
+        CUSTOM_NAME = #{customName,jdbcType=VARCHAR},
+      </if>
+      <if test="shipTime != null">
+        SHIP_TIME = #{shipTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="importNum != null">
+        IMPORT_NUM = #{importNum,jdbcType=INTEGER},
+      </if>
+      <if test="deliveryPeriod != null">
+        DELIVERY_PERIOD = #{deliveryPeriod,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oldState != null">
+        OLD_STATE = #{oldState,jdbcType=INTEGER},
+      </if>
+      <if test="outState != null">
+        OUT_STATE = #{outState,jdbcType=INTEGER},
+      </if>
+      <if test="tradeTerms != null">
+        TRADE_TERMS = #{tradeTerms,jdbcType=VARCHAR},
+      </if>
+      <if test="printStyle != null">
+        PRINT_STYLE = #{printStyle,jdbcType=CHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        `STATE` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDept != null">
+        CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where CONTRACT_ID = #{contractId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyzzz.pojo.ContractC">
+    <!--@mbg.generated-->
+    update contract_c
+    set OFFEROR = #{offeror,jdbcType=VARCHAR},
+      CONTRACT_NO = #{contractNo,jdbcType=VARCHAR},
+      SIGNING_DATE = #{signingDate,jdbcType=TIMESTAMP},
+      INPUT_BY = #{inputBy,jdbcType=VARCHAR},
+      CHECK_BY = #{checkBy,jdbcType=VARCHAR},
+      INSPECTOR = #{inspector,jdbcType=VARCHAR},
+      TOTAL_AMOUNT = #{totalAmount,jdbcType=DECIMAL},
+      CREQUEST = #{crequest,jdbcType=VARCHAR},
+      CUSTOM_NAME = #{customName,jdbcType=VARCHAR},
+      SHIP_TIME = #{shipTime,jdbcType=TIMESTAMP},
+      IMPORT_NUM = #{importNum,jdbcType=INTEGER},
+      DELIVERY_PERIOD = #{deliveryPeriod,jdbcType=TIMESTAMP},
+      OLD_STATE = #{oldState,jdbcType=INTEGER},
+      OUT_STATE = #{outState,jdbcType=INTEGER},
+      TRADE_TERMS = #{tradeTerms,jdbcType=VARCHAR},
+      PRINT_STYLE = #{printStyle,jdbcType=CHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      `STATE` = #{state,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DEPT = #{createDept,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where CONTRACT_ID = #{contractId,jdbcType=VARCHAR}
+  </update>
+
+  <resultMap id="listContractOfPageResultMap" type="com.lyzzz.pojo.ContractCVo" >
+    <id column="CONTRACT_ID" property="contractId" jdbcType="VARCHAR" />
+    <result column="OFFEROR" property="offeror" jdbcType="VARCHAR" />
+    <result column="CONTRACT_NO" property="contractNo" jdbcType="VARCHAR" />
+    <result column="SIGNING_DATE" property="signingDate" jdbcType="TIMESTAMP" />
+    <result column="INPUT_BY" property="inputBy" jdbcType="VARCHAR" />
+    <result column="CHECK_BY" property="checkBy" jdbcType="VARCHAR" />
+    <result column="INSPECTOR" property="inspector" jdbcType="VARCHAR" />
+    <result column="TOTAL_AMOUNT" property="totalAmount" jdbcType="DECIMAL" />
+    <result column="CREQUEST" property="crequest" jdbcType="VARCHAR" />
+    <result column="CUSTOM_NAME" property="customName" jdbcType="VARCHAR" />
+    <result column="SHIP_TIME" property="shipTime" jdbcType="TIMESTAMP" />
+    <result column="IMPORT_NUM" property="importNum" jdbcType="INTEGER" />
+    <result column="DELIVERY_PERIOD" property="deliveryPeriod" jdbcType="TIMESTAMP" />
+    <result column="OLD_STATE" property="oldState" jdbcType="INTEGER" />
+    <result column="OUT_STATE" property="outState" jdbcType="INTEGER" />
+    <result column="TRADE_TERMS" property="tradeTerms" jdbcType="VARCHAR" />
+    <result column="PRINT_STYLE" property="printStyle" jdbcType="CHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="INTEGER" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DEPT" property="createDept" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="extCproductNum" property="extCproductNum" jdbcType="INTEGER" />
+    <result column="contractProductNum" property="contractProductNum" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="listContractOfPage" parameterType="java.util.Map" resultMap="listContractOfPageResultMap">
+    SELECT
+    cc.CONTRACT_ID ,
+    cc.CONTRACT_NO ,
+    cc.INPUT_BY,
+    cc.CHECK_BY,
+    cc.INSPECTOR,
+    cc.SIGNING_DATE,
+    cc.DELIVERY_PERIOD,
+    cc.SHIP_TIME,
+    cc.TRADE_TERMS,
+    cc.TOTAL_AMOUNT,
+    cc.STATE,
+    cc.CUSTOM_NAME,
+    count(cpc.CONTRACT_PRODUCT_ID) extCproductNum,
+    count(ecc.EXT_CPRODUCT_ID) contractProductNum
+    FROM
+    contract_c cc
+    LEFT JOIN contract_product_c cpc on cc.CONTRACT_ID = cpc.CONTRACT_ID
+    LEFT JOIN ext_cproduct_c ecc on cpc.CONTRACT_PRODUCT_ID=ecc.CONTRACT_PRODUCT_ID
+    <where>
+      <if test="_parameter.containsKey('hth')">
+        cc.CONTRACT_NO=#{hth}
+      </if>
+      <if test="_parameter.containsKey('hh')">
+        cpc.PRODUCT_NO=#{hh}
+      </if>
+      <if test="_parameter.containsKey('zdr')">
+        cc.INPUT_BY=#{zdr}
+      </if>
+      <if test="_parameter.containsKey('sdr')">
+        cc.CHECK_BY=#{sdr}
+      </if>
+      <if test="_parameter.containsKey('yhy')">
+        cc.INSPECTOR=#{yhy}
+      </if>
+      <if test="_parameter.containsKey('state')">
+        cc.STATE=#{state}
+      </if>
+    </where>
+    GROUP BY
+    cc.CONTRACT_NO ,
+    cc.INPUT_BY,
+    cc.CHECK_BY,
+    cc.INSPECTOR,
+    cc.SIGNING_DATE,
+    cc.DELIVERY_PERIOD,
+    cc.SHIP_TIME,
+    cc.TRADE_TERMS,
+    cc.TOTAL_AMOUNT,
+    cc.STATE
+    ORDER BY  cc.UPDATE_TIME desc
+  </select>
+  <!--查看合同明细-->
+  <resultMap id="viewContractByContractIdResultMap" type="com.lyzzz.pojo.ContractCVo" >
+    <id column="CONTRACT_ID" property="contractId" jdbcType="VARCHAR" />
+    <result column="OFFEROR" property="offeror" jdbcType="VARCHAR" />
+    <result column="CONTRACT_NO" property="contractNo" jdbcType="VARCHAR" />
+    <result column="SIGNING_DATE" property="signingDate" jdbcType="TIMESTAMP" />
+    <result column="INPUT_BY" property="inputBy" jdbcType="VARCHAR" />
+    <result column="CHECK_BY" property="checkBy" jdbcType="VARCHAR" />
+    <result column="INSPECTOR" property="inspector" jdbcType="VARCHAR" />
+    <result column="TOTAL_AMOUNT" property="totalAmount" jdbcType="DECIMAL" />
+    <result column="CREQUEST" property="crequest" jdbcType="VARCHAR" />
+    <result column="CUSTOM_NAME" property="customName" jdbcType="VARCHAR" />
+    <result column="SHIP_TIME" property="shipTime" jdbcType="TIMESTAMP" />
+    <result column="IMPORT_NUM" property="importNum" jdbcType="INTEGER" />
+    <result column="DELIVERY_PERIOD" property="deliveryPeriod" jdbcType="TIMESTAMP" />
+    <result column="OLD_STATE" property="oldState" jdbcType="INTEGER" />
+    <result column="OUT_STATE" property="outState" jdbcType="INTEGER" />
+    <result column="TRADE_TERMS" property="tradeTerms" jdbcType="VARCHAR" />
+    <result column="PRINT_STYLE" property="printStyle" jdbcType="CHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="INTEGER" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DEPT" property="createDept" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+    <!--多个货物-->
+    <collection property="extCproductCList" ofType="com.lyzzz.pojo.ContractProductCVo">
+      <id column="CONTRACT_PRODUCT_ID" property="contractProductId" jdbcType="VARCHAR" />
+      <result column="CONTRACT_ID" property="contractId" jdbcType="VARCHAR" />
+      <result column="FACTORY_ID" property="factoryId" jdbcType="VARCHAR" />
+      <result column="FACTORY_NAME" property="factoryName" jdbcType="VARCHAR" />
+      <result column="PRODUCT_NO" property="productNo" jdbcType="VARCHAR" />
+      <result column="PRODUCT_IMAGE" property="productImage" jdbcType="VARCHAR" />
+      <result column="PRODUCT_DESC" property="productDesc" jdbcType="VARCHAR" />
+      <result column="LOADING_RATE" property="loadingRate" jdbcType="VARCHAR" />
+      <result column="BOX_NUM" property="boxNum" jdbcType="INTEGER" />
+      <result column="PACKING_UNIT" property="packingUnit" jdbcType="VARCHAR" />
+      <result column="CNUMBER" property="cnumber" jdbcType="INTEGER" />
+      <result column="OUT_NUMBER" property="outNumber" jdbcType="INTEGER" />
+      <result column="FINISHED" property="finished" jdbcType="INTEGER" />
+      <result column="PRODUCT_REQUEST" property="productRequest" jdbcType="VARCHAR" />
+      <result column="PRICE" property="price" jdbcType="DECIMAL" />
+      <result column="AMOUNT" property="amount" jdbcType="DECIMAL" />
+      <result column="ORDER_NO" property="orderNo" jdbcType="INTEGER" />
+      <!--多个附件-->
+      <collection property="extCproductCList" ofType="com.lyzzz.pojo.ExtCproductC">
+        <id column="extCproductId" property="extCproductId" jdbcType="VARCHAR" />
+        <result column="factoryName" property="factoryName" jdbcType="VARCHAR" />
+        <result column="productNo" property="productNo" jdbcType="VARCHAR" />
+        <result column="packingUnit" property="packingUnit" jdbcType="VARCHAR" />
+        <result column="ecnumber" property="cnumber" jdbcType="INTEGER" />
+        <result column="eprice" property="price" jdbcType="DECIMAL" />
+        <result column="eamount" property="amount" jdbcType="DECIMAL" />
+      </collection>
+    </collection>
+  </resultMap>
+  <select id="viewContractCByContractId" parameterType="String" resultMap="viewContractByContractIdResultMap">
+    select
+    cc.*, cpc.*,
+    ecc.EXT_CPRODUCT_ID extCproductId,
+    ecc.FACTORY_NAME factoryName,
+    ecc.PRODUCT_NO productNo,
+    ecc.PACKING_UNIT packingUnit,
+    ecc.CNUMBER ecnumber,
+    ecc.PRICE eprice,
+    ecc.AMOUNT eamount
+
+    FROM contract_c cc
+    LEFT JOIN contract_product_c cpc on cc.CONTRACT_ID=cpc.CONTRACT_ID
+    LEFT JOIN ext_cproduct_c ecc on cpc.CONTRACT_PRODUCT_ID = ecc.CONTRACT_PRODUCT_ID
+    WHERE cc.CONTRACT_ID=#{contractId}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from contract_c
+  </select>
+  <resultMap id="listOutProductByMonthBaseResult" type="com.lyzzz.pojo.OutProduct">
+    <result column="custom_name" property="customName" jdbcType="VARCHAR"/>
+    <result column="contract_no" property="contractNo" jdbcType="VARCHAR"/>
+    <result column="delivery_period" property="deliveryPeriod" jdbcType="VARCHAR"/>
+    <result column="ship_time" property="shipTime" jdbcType="VARCHAR"/>
+    <result column="trade_terms" property="tradeTerms" jdbcType="VARCHAR"/>
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR"/>
+    <result column="product_no" property="productNo" jdbcType="VARCHAR"/>
+    <result column="cnumber" property="cnumber" jdbcType="VARCHAR"/>
+  </resultMap>
+  <select id="listOutProductByMonth" parameterType="String" resultMap="listOutProductByMonthBaseResult">
+    SELECT
+    cc.custom_name,
+    cc.contract_no,
+    DATE_FORMAT(cc.delivery_period,'%Y-%m-%d') delivery_period,
+    DATE_FORMAT(cc.ship_time, '%Y-%m-%d') ship_time,
+    cc.trade_terms,
+    cpc.factory_name,
+    cpc.product_no,
+    CONCAT(cpc.cnumber,cpc.packing_unit) cnumber
+    FROM
+    contract_c cc
+    LEFT JOIN contract_product_c cpc ON cc.CONTRACT_ID = cpc.CONTRACT_ID
+    where DATE_FORMAT(cc.SHIP_TIME,'%Y-%m') = #{inputDate}
+  </select>
+  <select id="selectByList" resultMap="BaseResultMap" parameterType="list">
+    select * from contract_c
+   <where>
+    CONTRACT_ID in
+    <foreach item="contract" collection="list" separator="," open="(" close=")" index="">
+    #{contract,jdbcType=VARCHAR}
+    </foreach>
+    </where>
+   </select>
+    <update id="updateContract" >
+      update contract_c
+      set
+      TOTAL_AMOUNT = TOTAL_AMOUNT - #{param2,jdbcType=DOUBLE},
+      UPDATE_BY = #{param1.updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{param1.updateTime,jdbcType=TIMESTAMP}
+      where
+      CONTRACT_ID = #{param1.contractId,jdbcType=VARCHAR}
+    </update>
+
+
+</mapper>
