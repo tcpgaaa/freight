@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/freight" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freight-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freight/freight-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freight/freight-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freight/freight-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freight/freight-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/freight/freight-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testweb" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

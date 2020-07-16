@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="addSerializeUid" value="true" />
+        <option name="generateService" value="true" />
+        <option name="generateServiceInterface" value="true" />
+        <option name="javaMapperPackage" value="com.lyzzz.mapper" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/freight/freight-dao/src/main/java" />
+        <option name="javaModelPackage" value="com.lyzzz.pojo" />
+        <option name="javaModelPath" value="E:\idea_projects\freight\freight\freight-pojo\src\main\java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="freight-dao" />
+        <option name="lombokDataAnnotation" value="true" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="freight-dao">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.lyzzz.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/freight/freight-dao/src/main/java" />
+                  <option name="javaModelPacakge" value="com.lyzzz.pojo" />
+                  <option name="javaModelPath" value="E:\idea_projects\freight\freight\freight-pojo\src\main\java" />
+                  <option name="javaServiceInterfacePackage" value="com.lyzzz.service" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/freight/freight-service/src/main/java" />
+                  <option name="javaServicePackage" value="com.lyzzz.service.impl" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/freight/freight-service/src/main/java" />
+                  <option name="xmlPackage" value="com.lyzzz.mapper" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/freight/freight-dao/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+            <entry key="freight-pojo">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/freight/freight-pojo/src/main/java" />
+                  <option name="javaModelPacakge" value="com.lyzzz.pojo" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/freight/freight-pojo/src/main/java" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/freight/freight-pojo/src/main/java" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/freight/freight-pojo/src/main/java" />
+                  <option name="xmlPackage" value="com.mapper" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/freight/freight-pojo/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="freight:contract_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ContractC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:contract_product_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ContractProductC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:dept_p">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="DeptP" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:export_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ExportC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:export_product_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ExportProductC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:ext_cproduct_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ExtCproductC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:ext_eproduct_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ExtEproductC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:factory_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="FactoryC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:finance_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="FinanceC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:invoice_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="InvoiceC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:module_p">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ModuleP" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:packing_list_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="PackingListC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:role_module_p">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="RoleModuleP" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:role_p">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="RoleP" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:role_user_p">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="RoleUserP" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:shipping_order_c">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ShippingOrderC" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:user_info_p">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="UserInfoP" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="freight:user_p">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="UserP" />
+                  <option name="moduleName" value="freight-dao" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="xmlMapperPackage" value="com.lyzzz.mapper" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/freight/freight-dao/src/main/resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>
